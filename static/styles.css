@@ -1,0 +1,348 @@
+body {
+            font-family: 'Overpass', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            z-index: 1;
+            box-shadow: -1px 1px 1px #e0dfdf;
+            width: 100%;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: -1px 1px 1px #e0dfdf;
+            width: 100%;
+        }
+        .fix {
+        height: 80px;
+        wight: 10%;
+        }
+        section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            position: relative;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        footer p {
+            margin: 0;
+        }
+        .jumbotron {
+            background-image: url('headache.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 6%;
+            color: #fff;
+        }
+        .jumbotron h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            max-width: 55%;
+        }
+        .lang-link, .logo {
+            color: #fff;
+            text-decoration: none;
+        }
+         /* Стили для блока с пятью словами */
+    .word-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px; /* Измененная высота блока */
+        background-color: #f4f4f4; /* Цвет фона блока */
+        margin-bottom: 20px; /* Отступ снизу */
+        border-radius: 8px; /* Скругление углов */
+        font-weight: 550;
+    }
+.contact-btn {
+width: 190px;
+margin-right:20px;
+    padding: 10px 10px; /* Задает внутренние отступы кнопки */
+    border-radius: 10px; /* Скругляет углы кнопки */
+    background-color: #515151; /* Цвет фона кнопки */
+    color: #f4f4f4; /* Цвет текста кнопки */
+    text-decoration: none; /* Убирает подчеркивание */
+
+    text-align: center;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+
+.contact-btn:hover {
+    background-color: #717171; /* Изменяем цвет фона при наведении */
+    color: #fff; /* Изменяем цвет текста при наведении */
+    cursor: pointer; /* Изменяем курсор при наведении */
+}
+/* Стили для каждого столбца с словом */
+.word-column {
+    flex: 1;
+    text-align: center;
+    text-decoration: none; /* Убираем подчеркивание */
+    line-height: 70px; /* Выравниваем текст по вертикали */
+    color: #fff; /* Цвет текста */
+    border-radius: 5px; /* Скругление углов */
+    border: 1px solid #fff; /* Белая граница */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: transform 0.3s ease; /* Анимация изменения размера */
+}
+
+/* Эффект увеличения при наведении мыши */
+.word-column:hover {
+    transform: scale(1.00001); /* Немного увеличиваем размер при наведении */
+    padding: 5px; /* Добавляем отступ внутри объекта */
+}
+        /* Дополнительные стили для блока с информацией о мигрени */
+    .migraine-info {
+        margin-left: 15%;
+        margin-right: 15%;
+        width: 70%;
+        display: flex;
+        align-items: center;
+    }
+
+    .migraine-info img {
+        margin-right: 20px;
+        height: 250px; /* Высота изображения */
+        width: auto; /* Автоматическая ширина */
+    }
+
+    .migraine-info .content {
+        display: flex;
+        flex-direction:column;
+    }
+
+    .migraine-info .header {
+        text-align: center;
+        width: 240px;
+        padding: 5px 10px;
+        border-radius: 20px; /* Задаем скругленные углы */
+        background-color: #333; /* Цвет фона */
+        color: #fff; /* Цвет текста */
+        margin-bottom: 10px;
+    }
+
+    .migraine-info h2 {
+        margin: 0;
+        color: #fff; /* Цвет текста */
+    }
+
+    .migraine-info p {
+        margin: 0;
+        text-align: left;
+    }
+
+    .reasons {
+        margin-left: 15%;
+        margin-right: 15%;
+        width: 70%;
+        margin-bottom: 20px;
+    }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        li::before {
+
+            color: #333;
+            margin-right: 5px;
+        }
+        .logo {
+            width: 100%;
+            display: flex;
+        }
+    .characteristics_header{
+        background-color: #dbdbdb; /* Цвет фона блока */
+        padding-top: 20px;
+    }
+    .characteristics{
+        margin-left: 15%;
+        margin-right: 15%;
+        width: 70%;
+    }
+    .characteristics_logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    }
+    .characteristics_logo img {
+    background-color: #95C0F8;
+    height: 70px;
+    width: auto;
+    padding: 8px;
+    border: 3px solid #3b3b3b;
+    border-radius: 50%; /* Делает границу круглой */
+    box-sizing: border-box; /* Учитывает границу в общих размерах элемента */
+    }
+    .characteristics h2 {
+    background-color: #95C0F8;
+    border-bottom-right-radius: 40px; /* Делает границу круглой */
+    border-top-right-radius: 40px; /* Делает границу круглой */
+    border: 3px solid #3b3b3b;
+    border-left: none;
+    margin-left: -7px;
+    padding-left: 7px;
+    padding: 2px; /* Добавляет отступ вокруг границы */
+    padding-right: 8px;
+    padding-left: 8px;
+    box-sizing: border-box; /* Учитывает границу в общих размерах элемента */
+}
+.characteristics-info {
+        margin-left: 15%;
+        margin-right: 15%;
+        width: 70%;
+        display: flex;
+        align-items: center;
+    }
+    /* Дополнительные стили для блока с информацией о мигрени */
+    .symptoms-info {
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 20px;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .symptoms-info .content {
+        display: flex;
+        flex-direction:column;
+    }
+
+    .symptoms-info .header {
+        text-align: center;
+        width: 200px;
+        padding: 5px 10px;
+        border-radius: 20px; /* Задаем скругленные углы */
+        background-color: #333; /* Цвет фона */
+        color: #fff; /* Цвет текста */
+        margin-bottom: 10px;
+    }
+
+    .symptoms-info h2 {
+        margin: 0;
+        color: #fff; /* Цвет текста */
+    }
+
+    .symptoms-info p {
+        margin: 0;
+        text-align: left;
+    }
+    .symptom-description {
+    display: none;
+    padding-left: 30px;
+}
+.symptom-name{
+display: flex;
+justify-content: space-between;
+height: 18px;
+width: 400px;
+font-weight: 500;
+padding: 10px;
+border: 1px solid #3b3b3b;
+border-radius: 20px;
+padding-left: 14px;
+margin: 5px;
+}
+.symptom-description {
+    display: none;
+}
+
+.toggle-trigger {
+    display: none;
+}
+
+
+/* При нажатии на чекбокс меняем направление квадратной скобки */
+.toggle-trigger:checked ~ label .arrow {
+    transform: rotate(90deg);
+}
+.toggle-trigger:checked ~ label .symptom-description {
+    display: block;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+/* Стили для квадратной скобки */
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 5px;
+}
+
+/* При наведении на label меняем курсор */
+label:hover .symptom-name {
+    cursor: pointer;
+}
+
+    .contact_header {
+        background-color: #dbdbdb; /* Цвет фона блока */
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    .contact_header p {
+        padding-bottom: 10px;
+    }
+
+    .contact{
+        margin-left: 15%;
+        margin-right: 15%;
+        width: 70%;
+    }
+    .contact_logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    }
+    .contact_logo img {
+    background-color: #95C0F8;
+    height: 70px;
+    width: auto;
+    padding: 8px;
+    border: 3px solid #3b3b3b;
+    border-radius: 50%; /* Делает границу круглой */
+    box-sizing: border-box; /* Учитывает границу в общих размерах элемента */
+    }
+    .contact h2 {
+    background-color: #95C0F8;
+    border-bottom-right-radius: 40px; /* Делает границу круглой */
+    border-top-right-radius: 40px; /* Делает границу круглой */
+    border: 3px solid #3b3b3b;
+    border-left: none;
+    margin-left: -7px;
+    padding-left: 7px;
+    padding: 2px; /* Добавляет отступ вокруг границы */
+    padding-right: 8px;
+    padding-left: 8px;
+    box-sizing: border-box; /* Учитывает границу в общих размерах элемента */
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="{{ current_language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{{ title }}</title>
+</head>
+<body>
+<header>
+    <a href="#" class="logo">
+        <img src="static/cardiogram.png" style="height: 55px; width: 55px; margin-right: 10px;">
+        <h3 style="color: #fff;">{{ header }}</h3>
+    </a>
+    <a href="#contact" class="contact-btn">{{ contact_me }}</a>
+    <a href="{{ url_for('change_language', lang=current_language) }}" class="contact-btn" style="margin-right: 26px;">{{ change_language }}</a>
+</header>
+<div class = "fix"></div>
+<div class="jumbotron">
+    <div>
+        <h1>{{ jumbotron_header }}</h1>
+    </div>
+</div>
+<div class="word-block" id="whatis">
+    <a class="word-column" style="background-color: #C30047;" href="#whatis">{{ whatis_header }}</a>
+    <a class="word-column" style="background-color: #FF405C;" href="#characteristics">{{ characteristics_header }}</a>
+    <a class="word-column" style="background-color: #C30047;" href="#symptoms">{{ symptoms_header }}</a>
+    <a class="word-column" style="background-color: #FF405C;" href="#when_to_see_doctor">{{ when_to_see_doctor_header }}</a>
+    <a class="word-column" style="background-color: #C30047;" href="#clinic">{{ clinic_av }}</a>
+</div>
+
+
+<div class="migraine-info" id="characteristics">
+    <div class="content">
+        <div class="header"><h2>{{ whatis_header }}</h2></div>
+        <div>
+            <p style="margin-bottom: 14px;">{{ whatis_text1 }}</p>
+            <p >{{ whatis_text2 }}</p>
+        </div>
+    </div>
+    <img src="static/why.png" alt="Вопрос">
+</div>
+<p class = "reasons"> {{ whatis_reasons }}</p>
+
+<div class="contact_header"  id="symptoms">
+    <div class="migraine-info">
+        <div class="content">
+            <div class="header">
+                <h2>{{ characteristics_header }}</h2>
+            </div>
+            <p>{{ characteristics_text }}</p>
+            <p>{{ characteristics_end }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="symptoms-info" id="when_to_see_doctor">
+    <div class="content">
+        <div class="header"><h2>{{ symptoms_header }}</h2></div>
+        <p>{{ symptoms_text }}</p>
+        <div>
+            {% for symptom in symptoms_list %}
+            <div>
+                <input type="checkbox" id="symptom-toggle-{{ loop.index }}" class="toggle-trigger">
+                <label for="symptom-toggle-{{ loop.index }}">
+                    <div class="symptom-name">{{ symptom.name }} <div class="arrow">▶</div> </div>
+                    <div class="symptom-description">
+                        <div>{{ symptom.description }}</div>
+                    </div>
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+        <p>{{ symptoms_end }}</p>
+    </div>
+</div>
+
+
+
+<div class="contact_header" id="clinic">
+    <div class="doctors_info">
+        <div class="migraine-info">
+            <div class="content">
+                <div class="header" style="width: 400px;"><h2>{{ when_to_see_doctor_header }}</h2></div>
+                <p>{{ when_to_see_doctor_text }}</p>
+                <ul style="margin: 0px; padding-bottom: 20px;">
+                    {% for item in when_to_see_doctor_list %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="characteristics-info">
+            <div class="content" style="margin-top: 0px; padding-top: 0px;">
+                <p style="margin: 0px; padding-top: 0px;">{{ specialists_text }}</p>
+                <ul style="margin: 0px; padding-bottom: 20px;">
+                    {% for specialist in specialists_list %}
+                    <li>{{ specialist }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="contact_header" style="background-color: #f4f4f4;">
+    <div class="contact">
+        <div class="contact_logo">
+            <img src="static/clinic.png">
+            <h2>{{ clinic_av }}</h2>
+        </div>
+        <div>
+            <h3>{{ clinic_header }}</h3>
+            <p style="margin: 0px; padding: 0px;">{{ clinic_text }}</p>
+            <p style="margin: 0px; padding: 0px;">{{ clinic_phone }}</p>
+        </div>
+        <div id="contact">
+            <h3>{{ polyclinic_header }}</h3>
+            <p>{{ polyclinic_text }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Текст перед формой "Связаться со мной" -->
+<p style="text-align: start; margin: 0 15% 0 15%;">{{ form_info }}</p>
+
+<!-- Форма "Связаться со мной" -->
+<section class="contact-form" style="width: 64%; margin: 0 auto; background-color: #f4f4f4; padding: 20px; border-radius: 15px;">
+    <h2 style="text-align: center;">{{ contact_me }}</h2>
+    <form action="/submit_contact_form" method="post">
+        <div style="margin-bottom: 20px;">
+            <label for="name">{{ name }}</label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border-radius: 10px;">
+        </div>
+        <div style="margin-bottom: 20px;">
+            <label for="email">{{ email }}</label>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border-radius: 10px;">
+        </div>
+        <div style="margin-bottom: 20px;">
+            <label for="message">{{ message }}</label>
+            <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 10px; border-radius: 10px;"></textarea>
+        </div>
+        <button type="submit" style="width: 100%; padding: 10px; border-radius: 10px; background-color: #333; color: #fff; border: none; cursor: pointer;">{{ send }}</button>
+    </form>
+</section>
+
+
+</body>
+</html>
